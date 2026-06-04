@@ -289,7 +289,7 @@ public class TeamHittingAnalyzer {
 
         if (type.equals("max")) {
             JLabel label = new JLabel(
-                    "The " + name + " leads the league in " + category,
+                    "The " + name + " lead the league in " + category,
                     logo, JLabel.CENTER
             );
 
