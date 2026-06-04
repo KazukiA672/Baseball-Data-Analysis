@@ -48,10 +48,33 @@ public class Main {
         //mlbAnalyzer.getMaxTeam("strikeouts");
 
         // Testing the getMinTeam method
-        mlbAnalyzer.getMinTeam("ops");
+        //mlbAnalyzer.getMinTeam("ops");
 
+        // Creating a Scanner for users to interact with Analysis system
+        Scanner input = new Scanner(System.in);
 
+        System.out.println("Welcome to the Baseball Analysis System for Major League Baseball.");
+        System.out.print("Select if you would like to analyze for the team with the maximum or minimum value(Type 'max' or 'min'): ");
+        String type = input.next();
+        if (type.equalsIgnoreCase("max")){
+            mlbAnalyzer.getMaxTeam(callAnalysis());
+        }
+        else if(type.equalsIgnoreCase("min")){
+            mlbAnalyzer.getMinTeam(callAnalysis());
+        }
+        else{
+            System.out.println("Invalid: Response did not match 'max' or 'min'");
+        }
+        input.close();
 
+    }
 
+    // Method to recieve category to analyze from user for both max and min
+    public static String callAnalysis(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Here are the categories you can choose to analyze: hits, home runs, walks, strike outs, avg, obp, slg, ops");
+        System.out.print("Choose the category you would like to analyze: ");
+        String category = input.nextLine();
+        return category;
     }
 }
